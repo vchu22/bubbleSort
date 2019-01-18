@@ -3,14 +3,18 @@ function bubbleSort(array) {
   let sortedArr = array;
   if (array.length <= 1) return array;
   else {
-    for (let i = 0; i < array.length; i++) {
-      for (let j = i; j < array.length - 1; j++) {
-        if (array[j] > [j + 1]) {
-          let temp = array[j];
-          array[j] = array[j + 1];
-          array[j + 1] = temp;
+    for (let i = 0; i < sortedArr.length-1; i++) {
+      for (let j = 0; j < sortedArr.length - i - 1; j++) {
+        if (sortedArr[j] > sortedArr[j + 1]) {
+          let temp = sortedArr[j];
+          sortedArr[j] = sortedArr[j + 1];
+          sortedArr[j + 1] = temp;
         }
       }
     }
+    return sortedArr;
   }
 }
+
+
+// 3, 2, 7, 8, 1, 4, 9
