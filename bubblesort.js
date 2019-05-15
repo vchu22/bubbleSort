@@ -1,19 +1,24 @@
-function bubbleSort(array) {
+function swap(arr,leftIndex,rightIndex){
+  const temp1 = arr[leftIndex];
+    arr[leftIndex] = arr[rightIndex];
+    arr[rightIndex] = temp1;
+    return arr
+}
+function bubbleSort(arr) {
   /* your code here */
-  let sortedArr = array;
-  if (array.length <= 1) return array;
-  else {
-    for (let i = 0; i < sortedArr.length-1; i++) {
-      for (let j = 0; j < sortedArr.length - i - 1; j++) {
-        if (sortedArr[j] > sortedArr[j + 1]) {
-          let temp = sortedArr[j];
-          sortedArr[j] = sortedArr[j + 1];
-          sortedArr[j + 1] = temp;
-        }
+  let counter = 0;
+  let swaps = true
+  while(swaps){
+    swaps = false
+    for (let i = 0; i<(arr.length-counter); i++){
+      if (arr[i] > arr[i+1]){
+        arr = swap(arr,i,i+1)
+        swaps = true
       }
     }
-    return sortedArr;
+    counter++
   }
+  return arr
 }
 
 
